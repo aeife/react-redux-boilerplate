@@ -17,8 +17,6 @@ app.use(webpackDevMiddleware(compiler, {
   }
 }));
 
-app.use(webpackHotMiddleware(compiler, {
-log: console.log, path: '/__webpack_hmr', heartbeat: 10 * 1000
-}));
+app.use(webpackHotMiddleware(compiler));
 
 app.listen(8080, '0.0.0.0');
