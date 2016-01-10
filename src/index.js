@@ -9,7 +9,7 @@ const store = configureStore(window.__INITIAL_STATE__);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Root store={store}/>
+    <Root />
   </Provider>,
   document.getElementById('app')
 );
