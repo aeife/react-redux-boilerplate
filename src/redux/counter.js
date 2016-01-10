@@ -8,5 +8,5 @@ export const actions = {
 };
 
 export default handleActions({
-  [COUNTER_INCREMENT]: (state, { payload }) => state + payload + 1
+  [COUNTER_INCREMENT]: (state, { payload }) => state + payload
 }, 1);
