@@ -8,9 +8,23 @@
     "test:watch": "npm run test -- --watch",
     "build": "webpack --config ./build/webpack.config.babel.js --colors --progress",
     "deploy": "npm run test && npm run build",
-    "server": "babel-node ./server/server.js",
-    "server:debug": "npm run server -- --debugging",
+    "server": "better-npm-run server",
+    "server:debug": "better-npm-run server:debug",
     "clean": "rm -rf dist"
+  },
+  "betterScripts": {
+    "server": {
+      "command": "babel-node ./server/server.js",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "server:debug": {
+      "command": "better-npm-run server --debugging",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
   },
   "keywords": [],
   "author": "",
