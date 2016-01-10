@@ -1,4 +1,5 @@
 import path from 'path';
+import { argv } from 'yargs'
 
 const config = {
   env : process.env.NODE_ENV,
@@ -13,7 +14,8 @@ const config = {
 config.globals = {
    'NODE_ENV'     : config.env,
    '__DEV__'      : config.env === 'development',
-   '__PROD__'     : config.env === 'production'
+   '__PROD__'     : config.env === 'production',
+   '__DEBUG__'    : config.env === 'development' && argv.debugging,
 };
 
 export default config;

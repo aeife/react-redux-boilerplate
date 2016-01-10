@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { increment } from 'redux/counter';
 import Heading from 'components/Heading/Heading';
 import Counter from 'components/Counter/Counter';
+import DevTools from './DevTools';
 
 class Root extends React.Component {
   constructor (props) {
@@ -14,6 +15,11 @@ class Root extends React.Component {
     dispatch: React.PropTypes.func.isRequired,
     counter: React.PropTypes.number.isRequired
   };
+  renderDevTools = () => {
+    if (__DEBUG__) {
+      return <DevTools />;
+    }
+  };
   render () {
     const { dispatch, counter } = this.props;
     return (
@@ -21,6 +27,8 @@ class Root extends React.Component {
         <h1>App</h1>
         <Heading text='My App'/>
         <Counter value={counter} increment={() => dispatch(increment())}/>
+
+        {this.renderDevTools()}
       </div>
     );
   }

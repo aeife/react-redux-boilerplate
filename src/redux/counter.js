@@ -1,7 +1,6 @@
 export const COUNTER_INCREMENT = 'COUNTER_INCREMENT';
 
 export const increment = (value = 1) => {
-  console.log('INCREMENT');
   return {
     type: COUNTER_INCREMENT,
     value: 1

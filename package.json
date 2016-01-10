@@ -9,6 +9,7 @@
     "build": "webpack --config ./build/webpack.config.babel.js --colors --progress",
     "deploy": "npm run test && npm run build",
     "server": "babel-node ./server/server.js",
+    "server:debug": "npm run server -- --debugging",
     "clean": "rm -rf dist"
   },
   "keywords": [],
@@ -35,18 +36,20 @@
     "express": "^4.13.3",
     "ignore-styles": "^1.2.0",
     "jsdom": "^7.2.2",
-    "koa": "^1.1.2",
-    "koa-static": "^2.0.0",
     "mocha": "^2.3.4",
     "node-sass": "^3.4.2",
     "postcss-loader": "^0.8.0",
     "react-addons-test-utils": "^0.14.6",
     "react-transform-hmr": "^1.0.1",
+    "redux-devtools": "^3.0.1",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.1",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.10",
     "webpack-dev-middleware": "^1.4.0",
-    "webpack-hot-middleware": "^2.6.0"
+    "webpack-hot-middleware": "^2.6.0",
+    "yargs": "^3.31.0"
   },
   "dependencies": {
     "react": "^0.14.6",
