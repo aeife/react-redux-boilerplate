@@ -15,7 +15,7 @@ class Root extends React.Component {
     counter: React.PropTypes.number.isRequired
   };
   render () {
-    const { dispatch, value } = this.props;
+    const { dispatch, counter } = this.props;
     return (
       <div>
         <h1>App</h1>
