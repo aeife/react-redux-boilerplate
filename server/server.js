@@ -12,9 +12,11 @@ const compiler = webpack(config);
 app.use(fallback())
 app.use(express.static(path.resolve('./dist')));
 app.use(webpackDevMiddleware(compiler, {
+  publicPath: config.output.publicPath,
   stats: {
     colors: true
-  }
+  },
+  hot: true
 }));
 app.use(webpackHotMiddleware(compiler));
 

@@ -1,20 +1,12 @@
-export const COUNTER_INCREMENT = 'COUNTER_INCREMENT';
+import { createAction, handleActions } from 'redux-actions';
 
-export const increment = (value = 1) => {
-  return {
-    type: COUNTER_INCREMENT,
-    value: 1
-  };
-};
+export const COUNTER_INCREMENT = 'COUNTER_INCREMENT';
+export const increment = createAction(COUNTER_INCREMENT, (value = 1) => value);
 
 export const actions = {
   increment
 };
 
-export default (state = 1, action) => {
-  switch (action.type) {
-    case COUNTER_INCREMENT:
-      return state + action.value;
-  }
-  return state;
-};
+export default handleActions({
+  [COUNTER_INCREMENT]: (state, { payload }) => state + payload + 1
+}, 1);
