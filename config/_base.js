@@ -15,7 +15,7 @@ config.globals = {
    'NODE_ENV'     : config.env,
    '__DEV__'      : config.env === 'development',
    '__PROD__'     : config.env === 'production',
-   '__DEBUG__'    : config.env === 'development' && argv.debugging,
+   '__DEBUG__'    : config.env !== 'production' && argv.debugging,
 };
 
 export default config;
