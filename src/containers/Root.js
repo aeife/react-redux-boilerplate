@@ -1,13 +1,18 @@
 import React from 'react';
-import { Router, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
+import { Router } from 'react-router';
 
 import DevTools from './DevTools';
-import routes from 'routes/index';
 
 export default class Root extends React.Component {
   constructor (props) {
     super(props);
   }
+  static propTypes = {
+    history: React.PropTypes.object.isRequired,
+    routes: React.PropTypes.element.isRequired,
+    store: React.PropTypes.object.isRequired
+  };
   renderDevTools = () => {
     if (__DEBUG__) {
       return <DevTools />;
@@ -15,13 +20,15 @@ export default class Root extends React.Component {
   };
   render () {
     return (
-      <div>
-        <Router history={browserHistory}>
-          {routes}
-        </Router>
+      <Provider store={this.props.store}>
+        <div>
+          <Router history={this.props.history}>
+            {this.props.routes}
+          </Router>
 
-        {this.renderDevTools()}
-      </div>
+          {this.renderDevTools()}
+        </div>
+      </Provider>
     );
   }
 }
