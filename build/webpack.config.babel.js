@@ -84,7 +84,8 @@ webpackConfig.module.preLoaders = [{
   loader: 'eslint'
 }];
 webpackConfig.eslint = {
-  configFile: path.resolve('./.eslintrc')
+  configFile: path.resolve('./.eslintrc'),
+  emitWarning: true
 };
 
 export default webpackConfig;
