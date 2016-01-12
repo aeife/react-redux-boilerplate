@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { actions as counterActions } from 'redux/counter';
+import { actions as counterActions } from 'redux/actions/counter';
 import Heading from 'components/Heading/Heading';
 import Counter from 'components/Counter/Counter';
 
@@ -10,7 +10,7 @@ class CounterView extends React.Component {
     super(props);
   }
   static propTypes = {
-    counter: React.PropTypes.number.isRequired,
+    counter: React.PropTypes.object.isRequired,
     increment: React.PropTypes.func.isRequired
   };
   render () {
@@ -19,7 +19,7 @@ class CounterView extends React.Component {
         <h1>Counter View</h1>
 
         <Heading text='My App'/>
-        <Counter value={this.props.counter} increment={() => this.props.increment()}/>
+        <Counter value={this.props.counter.value} increment={() => this.props.increment()}/>
       </div>
     );
   }
