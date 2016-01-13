@@ -9,7 +9,6 @@ import CounterList from 'components/CounterList/CounterList';
 class CounterView extends React.Component {
   constructor (props) {
     super(props);
-    console.log(counterActions);
   }
   static propTypes = {
     counters: React.PropTypes.object.isRequired,

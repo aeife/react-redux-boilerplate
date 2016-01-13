@@ -5,8 +5,6 @@ import Counter from 'components/Counter/Counter';
 export default class CounterList extends React.Component {
   constructor (props) {
     super(props);
-    console.log(props.counters);
-    props.counters.forEach(counter => console.log(counter));
   }
   static propTypes = {
     counters: React.PropTypes.object,
