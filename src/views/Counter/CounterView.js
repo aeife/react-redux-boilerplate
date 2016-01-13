@@ -10,7 +10,7 @@ class CounterView extends React.Component {
     super(props);
   }
   static propTypes = {
-    counter: React.PropTypes.object.isRequired,
+    value: React.PropTypes.number.isRequired,
     increment: React.PropTypes.func.isRequired
   };
   render () {
@@ -19,7 +19,7 @@ class CounterView extends React.Component {
         <h1>Counter View</h1>
 
         <Heading text='My App'/>
-        <Counter value={this.props.counter.value} increment={() => this.props.increment()}/>
+        <Counter value={this.props.value} increment={() => this.props.increment()}/>
       </div>
     );
   }
@@ -27,7 +27,7 @@ class CounterView extends React.Component {
 
 function select (state) {
   return {
-    counter: state.counter
+    value: state.counter.get('value')
   };
 };
 
