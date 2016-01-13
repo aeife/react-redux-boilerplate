@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import { routeReducer as router } from 'redux-simple-router';
 
-import counter from 'redux/reducers/counter';
+import counterList from 'redux/reducers/counterList';
 
 export default combineReducers({
-  counter,
+  counters: counterList,
   router
 });
