@@ -11,7 +11,10 @@
     "__DEV__": false,
     "__PROD__": false,
     "__DEBUG__": false,
-    "NODE_ENV": false
+    "NODE_ENV": false,
+    "describe": false,
+    "it": false,
+    "afterEach": false
   },
   "rules": {
     "semi": [2, "always"]
