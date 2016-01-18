@@ -1,16 +1,21 @@
-import { createStore, compose } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import { persistState } from 'redux-devtools';
+import thunk from 'redux-thunk';
+
 import rootReducer from './rootReducer';
 import DevTools from 'containers/DevTools';
+
+const middleware = applyMiddleware(thunk);
 
 let finalCreateStore;
 if (__DEBUG__) {
   finalCreateStore = compose(
+    middleware,
     DevTools.instrument(),
     persistState(getDebugSessionKey())
   )(createStore);
 } else {
-  finalCreateStore = compose()(createStore);
+  finalCreateStore = compose(middleware)(createStore);
 }
 
 function getDebugSessionKey () {

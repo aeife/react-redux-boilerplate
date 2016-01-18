@@ -10,7 +10,7 @@ describe('Heading', () => {
     const component = TestUtils.renderIntoDocument(
       <Heading text={text}/>
     );
-    const headings = TestUtils.scryRenderedDOMComponentsWithTag (component, 'h1');
+    const headings = TestUtils.scryRenderedDOMComponentsWithTag(component, 'h1');
 
     expect(headings.length).to.equal(1);
   });
