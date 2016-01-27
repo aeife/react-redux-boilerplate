@@ -17,7 +17,7 @@ Object.keys(window).forEach((key) => {
   }
 });
 
-process.env.NODE_ENV = 'test';
+process.env.NODE_ENV = 'production';
 global.__DEV__ = true;
 global.__PROD__ = false;
 

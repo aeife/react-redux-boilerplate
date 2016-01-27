@@ -1,6 +1,6 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
-import {expect} from 'chai';
+import assert from 'assert';
 
 import Heading from '../Heading.js';
 
@@ -12,6 +12,6 @@ describe('Heading', () => {
     );
     const headings = TestUtils.scryRenderedDOMComponentsWithTag(component, 'h1');
 
-    expect(headings.length).to.equal(1);
+    assert.deepEqual(headings.length, 1);
   });
 });
