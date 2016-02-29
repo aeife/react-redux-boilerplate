@@ -5,9 +5,9 @@ function MainLayout ({ children }) {
   return (
     <div className='page-container'>
       <div className='view-container'>
-        <Link to='/'>Home</Link>
-        <Link to='/counter'>Counter</Link>
-        <Link to='/streams'>Streams</Link>
+        <Link to='/'>Home </Link>
+        <Link to='/counter'>Counter </Link>
+        <Link to='/posts'>Posts </Link>
         {children}
       </div>
     </div>
