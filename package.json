@@ -8,8 +8,8 @@
     "test:watch": "npm run test -- --watch",
     "build": "webpack --config ./build/webpack.config.babel.js --colors --progress",
     "deploy": "npm run test && npm run build",
-    "server": "better-npm-run server",
-    "server:debug": "better-npm-run server:debug",
+    "start": "better-npm-run server",
+    "start:debug": "better-npm-run server:debug",
     "clean": "rm -rf dist"
   },
   "betterScripts": {
