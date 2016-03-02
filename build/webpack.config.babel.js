@@ -1,5 +1,5 @@
 import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import autoprefixer from 'autoprefixer';
 
@@ -17,16 +17,16 @@ const webpackConfig = {
 };
 
 webpackConfig.entry = {
-    app: config.hmr
-      ? [config.dir_src + '/index.js', 'webpack-hot-middleware/client']
-      : [config.dir_src + '/index.js'],
+  app: config.hmr
+    ? [config.dir_src + '/index.js', 'webpack-hot-middleware/client']
+    : [config.dir_src + '/index.js']
 };
 
 webpackConfig.output = {
   filename: 'app.bundle.js',
   path: config.dir_dist,
   publicPath: '/'
-}
+};
 
 // NEEDED??
 webpackConfig.devServer = {
@@ -42,12 +42,12 @@ webpackConfig.plugins = [
     filename: 'index.html',
     inject: 'body'
   })
-]
+];
 if (config.hmr) {
   webpackConfig.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
-  )
+  );
 }
 if (config.env === 'production') {
   webpackConfig.plugins.push(
@@ -58,7 +58,7 @@ if (config.env === 'production') {
       },
       comments: false
     })
-  )
+  );
 }
 
 webpackConfig.module.loaders = [{
@@ -68,7 +68,7 @@ webpackConfig.module.loaders = [{
 }, {
   test: /\.scss?$/,
   loaders: [
-    "style",
+    'style',
     'css?modules&localIdentName=[name]---[local]---[hash:base64:5]&sourceMap&importLoaders=1',
     'postcss',
     'sass?sourceMap'
@@ -76,7 +76,7 @@ webpackConfig.module.loaders = [{
 }];
 webpackConfig.postcss = function () {
   return [autoprefixer];
-}
+};
 
 webpackConfig.module.preLoaders = [{
   test: /\.js$/,
