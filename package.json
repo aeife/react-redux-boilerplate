@@ -9,7 +9,7 @@
     "build": "webpack --config ./build/webpack.config.babel.js --colors --progress",
     "deploy": "npm run test && npm run build",
     "start": "better-npm-run server",
-    "start:debug": "better-npm-run server:debug",
+    "debug": "better-npm-run server:debug",
     "clean": "rm -rf dist"
   },
   "betterScripts": {
