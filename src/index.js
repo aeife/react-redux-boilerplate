@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createHistory } from 'history';
 import { syncReduxAndRouter } from 'redux-simple-router';
+import 'styles/main.scss';
 
 import Root from './containers/Root';
 import routes from 'routes/index';
