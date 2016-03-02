@@ -1,5 +1,6 @@
 export default (config) => {
   return {
-    hmr        : false
+    hmr: false,
+    devtools: false
   };
 };

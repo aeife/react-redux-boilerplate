@@ -2,8 +2,6 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 
-import DevTools from './DevTools';
-
 export default class Root extends React.Component {
   constructor (props) {
     super(props);
@@ -15,6 +13,7 @@ export default class Root extends React.Component {
   };
   renderDevTools = () => {
     if (__DEBUG__) {
+      const DevTools = require('./DevTools').default;
       return <DevTools />;
     }
   };
