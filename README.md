@@ -4,7 +4,7 @@
 
 inspired by https://github.com/davezuko/react-redux-starter-kit
 
-using Webpack + react + redux + redux-simple-router + immutable.js
+using Webpack + react + redux + react-router-redux + immutable.js
 
 ### General
 * fully based on ES2015 using babel
