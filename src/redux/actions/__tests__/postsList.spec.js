@@ -40,13 +40,11 @@ describe('actions', () => {
       nock.cleanAll();
     });
 
-    it('creates RECEIVE_POSTS when fetching posts', (done) => {
+    it('creates RECEIVE_POSTS when fetching posts', () => {
       const subreddit = 'news';
       nock('http://www.reddit.com')
         .get('/r/news.json')
-        .reply(200, {
-          data: {children: [{id: 1}]}
-        });
+        .reply(200, {children: [{id: 1}]});
 
       const expectedActions = [
         {type: 'REQUEST_POSTS', payload: {subreddit}},
@@ -55,8 +53,11 @@ describe('actions', () => {
           posts: [{id: 1}]
         }}
       ];
-      const store = mockStore({}, expectedActions, done);
-      store.dispatch(actions.fetchPosts(subreddit));
+      const store = mockStore({});
+      store.dispatch(actions.fetchPosts(subreddit))
+        .then(() => {
+          expect(store.getActions).toEqual(expectedActions);
+        });
     });
   });
 });
