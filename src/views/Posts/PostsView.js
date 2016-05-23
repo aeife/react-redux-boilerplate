@@ -5,9 +5,6 @@ import { actions as postsListActions } from 'redux/actions/postsList';
 import PostsList from 'components/PostsList/PostsList';
 
 class PostsView extends React.Component {
-  constructor (props) {
-    super(props);
-  }
   static propTypes = {
     postsData: React.PropTypes.object.isRequired,
     actions: React.PropTypes.object.isRequired

@@ -3,9 +3,6 @@ import React from 'react';
 import Counter from 'components/Counter/Counter';
 
 export default class CounterList extends React.Component {
-  constructor (props) {
-    super(props);
-  }
   static propTypes = {
     counters: React.PropTypes.object,
     actions: React.PropTypes.object

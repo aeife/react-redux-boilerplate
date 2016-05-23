@@ -7,9 +7,9 @@ import PostsList from '../PostsList.js';
 
 describe('PostsList', () => {
   it('renders input field', () => {
-    const postsData = Map({posts: List.of(Map({id: 1}), Map({id: 3}))});
+    const postsData = Map({posts: List.of(Map({data: Map({id: 1})}), Map({data: Map({id: 3})}))});
     const component = TestUtils.renderIntoDocument(
-      <PostsList postsData={postsData}/>
+      <PostsList postsData={postsData} />
     );
     const input = TestUtils.scryRenderedDOMComponentsWithTag(component, 'input');
 
@@ -17,9 +17,9 @@ describe('PostsList', () => {
   });
 
   it('renders list points for each post', () => {
-    const postsData = Map({posts: List.of(Map({id: 1}), Map({id: 3}))});
+    const postsData = Map({posts: List.of(Map({data: Map({id: 1})}), Map({data: Map({id: 3})}))});
     const component = TestUtils.renderIntoDocument(
-      <PostsList postsData={postsData}/>
+      <PostsList postsData={postsData} />
     );
     const post = TestUtils.scryRenderedDOMComponentsWithTag(component, 'li');
 

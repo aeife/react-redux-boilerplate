@@ -11,7 +11,8 @@
     "deploy": "npm run test && npm run build",
     "start": "better-npm-run server",
     "debug": "better-npm-run server:debug",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "lint": "eslint src"
   },
   "betterScripts": {
     "test": {

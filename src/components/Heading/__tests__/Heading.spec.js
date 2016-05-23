@@ -8,7 +8,7 @@ describe('Heading', () => {
   it('renders headline with text', () => {
     const text = 'my text';
     const component = TestUtils.renderIntoDocument(
-      <Heading text={text}/>
+      <Heading text={text} />
     );
     const headings = TestUtils.scryRenderedDOMComponentsWithTag(component, 'h1');
 

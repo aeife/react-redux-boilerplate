@@ -1,9 +1,6 @@
 import React from 'react';
 
 export default class PostsList extends React.Component {
-  constructor (props) {
-    super(props);
-  }
   static propTypes = {
     postsData: React.PropTypes.object,
     actions: React.PropTypes.object

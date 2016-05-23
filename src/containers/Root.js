@@ -3,9 +3,6 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 
 export default class Root extends React.Component {
-  constructor (props) {
-    super(props);
-  }
   static propTypes = {
     history: React.PropTypes.object.isRequired,
     routes: React.PropTypes.element.isRequired,

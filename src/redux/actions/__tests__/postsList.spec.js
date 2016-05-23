@@ -1,6 +1,5 @@
 import { expect } from 'chai';
-import { actions } from '../postsList.js';
-import { REQUEST_POSTS, RECEIVE_POSTS } from '../postsList.js';
+import { actions, REQUEST_POSTS, RECEIVE_POSTS } from '../postsList.js';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';

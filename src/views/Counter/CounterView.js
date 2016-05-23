@@ -7,9 +7,6 @@ import Heading from 'components/Heading/Heading';
 import CounterList from 'components/CounterList/CounterList';
 
 class CounterView extends React.Component {
-  constructor (props) {
-    super(props);
-  }
   static propTypes = {
     counters: React.PropTypes.object.isRequired,
     actions: React.PropTypes.object
@@ -19,7 +16,7 @@ class CounterView extends React.Component {
       <div>
         <h1>Counter View</h1>
 
-        <Heading text='My App'/>
+        <Heading text='My App' />
         <h2>sub</h2>
         <CounterList counters={this.props.counters} actions={this.props.actions} />
       </div>

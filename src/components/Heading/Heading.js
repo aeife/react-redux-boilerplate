@@ -2,9 +2,6 @@ import React from 'react';
 import css from './Heading.scss';
 
 export default class Heading extends React.Component {
-  constructor (props) {
-    super(props);
-  }
   static propTypes = {
     text: React.PropTypes.string
   };
