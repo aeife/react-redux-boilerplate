@@ -13,7 +13,7 @@ export default class PostsList extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input type='text' placeholder='subreddit' ref='subredditInput' defaultValue='news'></input>
+          <input type='text' placeholder='subreddit' ref='subredditInput' defaultValue='news' />
           <button type='submit'>submit</button>
         </form>
         {this.props.postsData.get('subreddit')

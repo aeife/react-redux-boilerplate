@@ -9,7 +9,7 @@ import fallback from 'connect-history-api-fallback';
 const app = express();
 const compiler = webpack(config);
 
-app.use(fallback())
+app.use(fallback());
 app.use(express.static(path.resolve('./dist')));
 app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
