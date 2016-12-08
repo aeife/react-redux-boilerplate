@@ -9,7 +9,7 @@ export default class Root extends React.Component {
     store: React.PropTypes.object.isRequired
   };
   renderDevTools = () => {
-    if (__DEBUG__) {
+    if (__DEBUG__ && !window.devToolsExtension) {
       const DevTools = require('./DevTools').default;
       return <DevTools />;
     }

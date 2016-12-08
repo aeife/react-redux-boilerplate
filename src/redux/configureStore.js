@@ -8,8 +8,8 @@ let finalCreateStore;
 if (__DEBUG__) {
   finalCreateStore = compose(
     middleware,
-    require('containers/DevTools').default.instrument(),
-    require('redux-devtools').persistState(getDebugSessionKey())
+    window.devToolsExtension ? window.devToolsExtension() : require('containers/DevTools').default.instrument(),
+    window.devToolsExtension ? f => f : require('redux-devtools').persistState(getDebugSessionKey())
   )(createStore);
 } else {
   finalCreateStore = compose(middleware)(createStore);
